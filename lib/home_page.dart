@@ -7,6 +7,16 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<String> images = [
+      "https://cdn2.thecatapi.com/images/bi.jpg",
+      "https://cdn2.thecatapi.com/images/63g.jpg",
+      "https://cdn2.thecatapi.com/images/a3h.jpg",
+      "https://cdn2.thecatapi.com/images/a9m.jpg",
+      "https://cdn2.thecatapi.com/images/aph.jpg",
+      "https://cdn2.thecatapi.com/images/1rd.jpg",
+      "https://cdn2.thecatapi.com/images/805.gif",
+    ];
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -27,10 +37,12 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.white,
       ),
       body: ListView.builder(
-          itemCount: 100, // 전체 아이템 개수
+          itemCount: images.length, // 전체 아이템 개수
           itemBuilder: (context, index) {
-            // index는 0 부터 99까지 증가
-            return Feed(); // 100번 실행
+            final image = images[index];
+            return Feed(
+              imageUrl: image,
+            ); // 100번 실행
           }),
     );
   }
