@@ -26,7 +26,12 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.white,
       ),
-      body: Feed(),
+      body: ListView.builder(
+          itemCount: 100, // 전체 아이템 개수
+          itemBuilder: (context, index) {
+            // index는 0 부터 99까지 증가
+            return Feed(); // 100번 실행
+          }),
     );
   }
 }
